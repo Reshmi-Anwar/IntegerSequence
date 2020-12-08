@@ -19,13 +19,16 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public boolean hasNext(){
-    return true;
+    if (currentIndex < data.length){
+      return true;
+    }
+    return false;
   }
   public int length(){
-    return 0;
+    return data.length;
   }
   public void reset(){
-
+    currentIndex = 0;
   }
 
 }
