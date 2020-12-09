@@ -33,16 +33,14 @@ public class ArraySequence implements IntegerSequence{
 
   public ArraySequence(IntegerSequence otherseq){
     int i = 0;
-    int[] x = new int[otherseq.length()];
+    otherseq.reset();
+    data = new int[otherseq.length()];
     while (otherseq.hasNext() == true){
-      x[i] = otherseq.next();
+      data[i] = otherseq.next();
       i++;
     }
-    data = new int[i];
-    for(int n = 0; n < data.length; n++){
-      data[n] = x[n];
-    }
     currentIndex = 0;
+    otherseq.reset();
   }
 
 }
